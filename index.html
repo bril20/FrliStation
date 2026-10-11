@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>FrliStation</title>
+<style>
+:root{
+  --bg: #ffffff;
+  --surface: #f8f9fb;
+  --card-border: #e6eef6;
+  --text: #0f1724;
+  --muted: #6b7280;
+  --accent: #0a66c2; /* 简洁蓝色 */
+  --accent-hover: #0854a0;
+  --radius: 10px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-hover: 0 6px 16px rgba(0,0,0,0.09);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  padding:32px 20px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container{
+  max-width:920px;
+  margin:0 auto;
+}
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:24px;
+}
+h1{
+  margin:0;
+  font-size:24px;
+  color:var(--accent);
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+main{display:grid;gap:18px;}
+.card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:20px;
+  border:1px solid var(--card-border);
+  box-shadow:var(--shadow);
+  transition: all 0.25s ease;
+}
+.card:hover{
+  box-shadow:var(--shadow-hover);
+}
+.card h2{margin:0 0 8px 0;font-size:16px;}
+.meta{color:var(--muted);font-size:13px;margin-bottom:8px;}
+.desc{color:var(--text);font-size:14px;line-height:1.45;}
+.downloads{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:14px;
+  margin-top:8px;
+}
+.dl-card{
+  background:#fff;
+  border:1px solid var(--card-border);
+  padding:16px;
+  border-radius:8px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:120px;
+  box-shadow:0 1px 5px rgba(0,0,0,0.04);
+  transition: all 0.25s ease;
+}
+.dl-card:hover{
+  box-shadow:0 4px 12px rgba(0,0,0,0.07);
+  transform: translateY(-2px);
+}
+.dl-title{font-weight:700;margin-bottom:6px;color:#0f1724;}
+.btn-row{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap;}
+.btn{
+  display:inline-block;
+  padding:8px 14px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+  font-size:13px;
+  transition: background 0.2s ease;
+}
+.btn:hover{
+  background:var(--accent-hover);
+}
+.link-muted{color:var(--muted);font-size:13px;}
+.bili {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:var(--accent);
+  font-weight:600;
+  font-size:14px;
+  transition: opacity 0.2s ease;
+}
+.bili:hover{
+  opacity:0.8;
+}
+.bili svg{width:34px;height:22px;display:block;}
+footer{
+  margin-top:22px;
+  font-size:13px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+@media (max-width:520px){
+  header{flex-direction:column;align-items:flex-start;gap:8px;}
+  body{padding:20px 16px;}
+  .card{padding:16px;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>FrliStation</h1>
+    <div style="color:var(--muted);font-size:13px;">By FrliCraft</div>
+  </header>
+  <main>
+    <section class="card" id="about">
+      <h2>关于 FrliStation</h2>
+      <div class="meta">该页面属于FrliCraft</div>
+      <div class="desc"></div>
+    </section>
+    <section class="card" aria-labelledby="downloads-title">
+      <h2 id="downloads-title">下载我们的一些作品：</h2>
+      <div class="downloads">
+        <article class="dl-card" id="palace2">
+          <div>
+            <div class="dl-title">Palace2.litematic</div>
+            <div class="meta">作者：bril20 部门：建筑艺术部</div>
+            <div class="desc" style="font-size:13px;margin-top:8px;">一个大会议厅</div>
+          </div>
+          <div class="btn-row">
+            <a class="btn" href="Palace2.litematic" download="Palace2.litematic" aria-label="下载 Palace2.litematic">下载 Palace2</a>
+            <span class="link-muted">文件名：Palace2.litematic</span>
+          </div>
+        </article>
+        <article class="dl-card" id="铁路枢纽V2+">
+          <div>
+            <div class="dl-title">railwayhub.litematic</div>
+            <div class="meta">作者：Guo_jang 部门：红石技术部</div>
+            <div class="desc" style="font-size:13px;margin-top:8px;">一个红石铁路枢纽</div>
+          </div>
+          <div class="btn-row">
+            <a class="btn" href="railwayhub.litematic" download="railwayhub.litematic" aria-label="下载 railwayhub.litematic">下载 railwayhub</a>
+            <span class="link-muted">文件名：railwayhub.litematic</span>
+          </div>
+        </article>
+      </div>
+      <!-- CuCircle 链接（已移动到下载下方，规格相同） -->
+      <div style="margin-top:12px;">
+        <article class="dl-card" id="cucircle" style="min-height:80px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div>
+              <div class="dl-title">CuCircle 页面</div>
+              <div class="meta">作者：bril20 部门：#</div>
+              <div class="desc" style="font-size:13px;margin-top:6px;">一个辅助建筑玩家在MC中建造园的工具</div>
+            </div>
+            <div style="flex-shrink:0;">
+              <a class="btn" href="CuCircle.html" aria-label="前往 CuCircle">打开 CuCircle</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="card" id="bili">
+      <h2>关注我们</h2>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <a class="bili" href="https://space.bilibili.com/3707009622870073?spm_id_from=333.337.0.0" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <rect rx="3" ry="3" width="24" height="18" fill="#FF2D6D"></rect>
+            <path d="M5 5c0-1 1-1 1-1h2c1 0 1 1 1 1v3c0 1-1 1-1 1H6c-1 0-1-1-1-1V5zM15 5c0-1 1-1 1-1h2c1 0 1 1 1 1v3c0 1-1 1-1 1h-2c-1 0-1-1-1-1V5z" fill="#fff"></path>
+          </svg>
+          <span>在Bilibili上关注我们</span>
+        </a>
+        <div class="link-muted">更多视频我们的 Bilibili 空间找到。</div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div>FrliCraft-FrliStation.2026</div>
+    <div class="link-muted">...waiting for some new</div>
+  </footer>
+</div>
+</body>
+</html>
